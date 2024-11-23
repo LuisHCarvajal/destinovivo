@@ -1,9 +1,9 @@
-package service;
+package com.proyectoDestinoVivo.proyectoDestinoVivo.service;
 
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Usuario;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
-import repository.UsuarioRepository;
+import com.proyectoDestinoVivo.proyectoDestinoVivo.repository.UsuarioRepository;
 
 import java.util.List;
 

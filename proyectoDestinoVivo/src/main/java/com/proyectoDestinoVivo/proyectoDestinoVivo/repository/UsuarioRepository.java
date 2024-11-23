@@ -1,4 +1,4 @@
-package repository;
+package com.proyectoDestinoVivo.proyectoDestinoVivo.repository;
 
 
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Usuario;
