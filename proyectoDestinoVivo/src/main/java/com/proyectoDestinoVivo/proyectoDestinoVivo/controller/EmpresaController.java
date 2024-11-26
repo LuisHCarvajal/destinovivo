@@ -30,7 +30,7 @@ public class EmpresaController {
         try{
             return empresaService.consultarEmpresas();
         }catch (RuntimeException e){
-            throw new RuntimeException("Erro al consultar las empresas" +e);
+            throw new RuntimeException("Error al consultar las empresas" +e);
         }
     }
 }
