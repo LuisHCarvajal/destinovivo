@@ -15,7 +15,7 @@ public class Empresa {
     @Column(nullable = false, length = 50)
     private String direccion;
     @Column(nullable = false, length = 250)
-    private Long descripcion;
+    private String descripcion;
     @Column(nullable = false, length = 100)
     private String horario;
     @Column(nullable = false, length = 20)
@@ -27,7 +27,7 @@ public class Empresa {
     @Column(nullable = false, length = 100)
     private String imagen;
 
-    public Empresa(int id_empresa, String nombre, String direccion, Long descripcion, String horario, String telefono, String correo, String contrasena, String imagen) {
+    public Empresa(int id_empresa, String nombre, String direccion, String descripcion, String horario, String telefono, String correo, String contrasena, String imagen) {
         this.id_empresa = id_empresa;
         this.nombre = nombre;
         this.direccion = direccion;
@@ -106,11 +106,11 @@ public class Empresa {
         this.imagen = imagen;
     }
 
-    public Long getDescripcion() {
+    public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(Long descripcion) {
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 }

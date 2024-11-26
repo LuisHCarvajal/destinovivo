@@ -16,7 +16,7 @@ public class UsuarioController {
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
-    @PostMapping("/insertar")
+    @PostMapping("usuarios//insertar")
     public Usuario insertar(@RequestBody Usuario usuario){
         try {
             return usuarioService.insertarUsuario(usuario);
@@ -25,7 +25,7 @@ public class UsuarioController {
         }
 
     }
-    @GetMapping("/consultar")
+    @GetMapping("usuarios//consultar")
     public List<Usuario> consultar(){
         try{
             return usuarioService.consultarUsuario();

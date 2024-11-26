@@ -14,13 +14,13 @@ public class Usuario {
     private String nombre;
     @Column(nullable = false, length = 50)
     private String correo;
-    private int telefono;
+    private String telefono;
     @Column(nullable = false, length = 50)
     private String nacionalidad;
     @Column(nullable = false, length = 50)
     private String fecha_nacimiento;
 
-    public Usuario(int documento, String nombre, String correo, int telefono, String nacionalidad, String fecha_nacimiento) {
+    public Usuario(int documento, String nombre, String correo, String telefono, String nacionalidad, String fecha_nacimiento) {
         this.documento = documento;
         this.nombre = nombre;
         this.correo = correo;
@@ -56,11 +56,11 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
