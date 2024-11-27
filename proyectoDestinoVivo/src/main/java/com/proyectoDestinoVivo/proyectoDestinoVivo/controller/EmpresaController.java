@@ -2,10 +2,8 @@ package com.proyectoDestinoVivo.proyectoDestinoVivo.controller;
 
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Empresa;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.service.EmpresaService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +23,7 @@ public class EmpresaController {
         }
 
     }
+
     @GetMapping("/empresas/consultar")
     public List<Empresa> consultar(){
         try{
@@ -32,5 +31,17 @@ public class EmpresaController {
         }catch (RuntimeException e){
             throw new RuntimeException("Error al consultar las empresas" +e);
         }
+    }
+
+    @PutMapping("/empresas/editar/{id_empresa}")
+    public ResponseEntity<Empresa> editarEmpresa(@PathVariable int id_empresa, @RequestBody Empresa empresa){
+        Empresa actualizada = empresaService.editarEmpresa(id_empresa, empresa);
+        return ResponseEntity.ok(actualizada);
+
+    }
+
+    @DeleteMapping("/empresas/eliminar/{id_empresa}")
+    public String eliminarEmpresa(@PathVariable int id_empresa, @RequestBody Empresa empresa){
+        return empresaService.eliminarEmpresa(id_empresa);
     }
 }
