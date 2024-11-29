@@ -6,7 +6,6 @@ import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Usuario;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.repository.EmpresaRepository;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.repository.ResenaRepository;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +14,7 @@ import java.util.List;
 
 @Service
 public class ResenaService {
-
-
-    private final ResenaRepository resenaRepository;
+    private ResenaRepository resenaRepository;
     private final UsuarioRepository usuarioRepository;
     private final EmpresaRepository empresaRepository;
 
@@ -28,8 +25,7 @@ public class ResenaService {
     }
 
     public Resena insertarResena(Resena resena){
-
-        // Buscar y asignar el usuario
+        System.out.println(resena);
         Usuario usuario = usuarioRepository.findById(resena.getUsuario().getDocumento())
                 .orElseThrow(()->new IllegalArgumentException("Usuario no encontrado"));
 
@@ -37,16 +33,12 @@ public class ResenaService {
         Empresa empresa = empresaRepository.findById(resena.getEmpresa().getId_empresa())
                 .orElseThrow(()->new IllegalArgumentException("Empresa no encontrado"));
 
-        resena.setUsuario(usuario);
-        resena.setEmpresa(empresa);
 
         return resenaRepository.save(resena);
 
     }
 
-    public List<Resena> consultarResena()
-    {
-
+    public List<Resena> consultarResena(){
         return  resenaRepository.findAll();
     }
 }

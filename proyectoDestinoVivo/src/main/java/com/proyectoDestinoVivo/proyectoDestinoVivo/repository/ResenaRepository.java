@@ -1,5 +1,4 @@
 package com.proyectoDestinoVivo.proyectoDestinoVivo.repository;
-
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Resena;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Usuario;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Empresa;
