@@ -1,5 +1,4 @@
 package com.proyectoDestinoVivo.proyectoDestinoVivo.controller;
-
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Empresa;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.service.EmpresaService;
 import org.springframework.http.ResponseEntity;

@@ -43,9 +43,6 @@ public class EmpresaService {
         return "Empresa eliminada correctamente";
     }
 
-
-
-
     public List<Empresa> consultarEmpresas(){
         return empresaRepository.findAll();
     }
