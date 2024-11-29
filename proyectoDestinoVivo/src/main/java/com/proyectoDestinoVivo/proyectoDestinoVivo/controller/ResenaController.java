@@ -32,19 +32,3 @@ public class ResenaController {
 
 }
 
-/*
-  public Resena insertarresena(@RequestBody Resena resena){
-        try{
-            return resenaService.insertarResena(resena);
-        }catch (RuntimeException e){
-            throw new RuntimeException("Error al insertar la reseña" +e);
-        }
-    }
-        public List<Resena> consultarresena(){
-        try{
-            return resenaService.consultarResena();
-        }catch (RuntimeException e){
-           throw  new RuntimeException("Error al consultar las reseñas" +e);
-        }
-    }
- */

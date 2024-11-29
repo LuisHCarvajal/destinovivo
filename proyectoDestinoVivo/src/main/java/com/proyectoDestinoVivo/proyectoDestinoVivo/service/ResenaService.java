@@ -46,6 +46,7 @@ public class ResenaService {
 
     public List<Resena> consultarResena()
     {
+
         return  resenaRepository.findAll();
     }
 }

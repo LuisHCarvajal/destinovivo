@@ -12,6 +12,7 @@ public class UsuarioService {
     private UsuarioRepository usuarioRepository;
 
     public UsuarioService(UsuarioRepository usuarioRepository) {
+
         this.usuarioRepository = usuarioRepository;
     }
 
@@ -24,6 +25,7 @@ public class UsuarioService {
     }
 
     public List<Usuario> consultarUsuario(){
+
         return usuarioRepository.findAll();
     }
 }
