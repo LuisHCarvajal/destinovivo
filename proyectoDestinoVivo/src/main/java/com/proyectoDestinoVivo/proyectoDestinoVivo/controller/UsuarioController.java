@@ -1,22 +1,24 @@
 package com.proyectoDestinoVivo.proyectoDestinoVivo.controller;
 
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Usuario;
+import com.proyectoDestinoVivo.proyectoDestinoVivo.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.proyectoDestinoVivo.proyectoDestinoVivo.service.UsuarioService;
 
 import java.util.List;
 
 @RestController
 public class UsuarioController {
+    @Autowired
     private final UsuarioService usuarioService;
 
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
-    @PostMapping("/insertar")
+    @PostMapping("/insertarUsuario")
     public Usuario insertar(@RequestBody Usuario usuario){
         try {
             return usuarioService.insertarUsuario(usuario);
@@ -25,7 +27,7 @@ public class UsuarioController {
         }
 
     }
-    @GetMapping("/consultar")
+    @GetMapping("/consultarUsuario")
     public List<Usuario> consultar(){
         try{
             return usuarioService.consultarUsuario();
