@@ -1,11 +1,21 @@
 package com.proyectoDestinoVivo.proyectoDestinoVivo.model;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
 @Table(name = "servicio")
 public class Servicio {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_servicio", nullable = false)
     private int id_servicio;
 
     @ManyToOne
@@ -17,55 +27,4 @@ public class Servicio {
     private Long precio;
     @Column(nullable = false, length = 250)
     private String descripcion;
-
-    public Servicio(int id_servicio, Empresa empresa, String nombre, Long precio, String descripcion) {
-        this.id_servicio = id_servicio;
-        this.empresa = empresa;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.descripcion = descripcion;
-    }
-
-    public Servicio() {
-    }
-
-    public int getId_servicio() {
-        return id_servicio;
-    }
-
-    public void setId_servicio(int id_servicio) {
-        this.id_servicio = id_servicio;
-    }
-
-    public Empresa getEmpresa() {
-        return empresa;
-    }
-
-    public void setEmpresa(Empresa empresa) {
-        this.empresa = empresa;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public Long getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(Long precio) {
-        this.precio = precio;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
 }
