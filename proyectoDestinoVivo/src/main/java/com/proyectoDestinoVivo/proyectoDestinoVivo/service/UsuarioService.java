@@ -30,7 +30,7 @@ public class UsuarioService {
             throw new RuntimeException("Error al consultar el usuario" + e);
         }
     }
-   /* public Usuario editarUsuario(int documento, Usuario usuario){
+   public Usuario editarUsuario(int documento, Usuario usuario){
         Usuario existente = usuarioRepository.findById(documento).orElseThrow(()->new RuntimeException("Empresa no existente"));
         existente.setNombre(usuario.getNombre());
         existente.setCorreo(usuario.getCorreo());
