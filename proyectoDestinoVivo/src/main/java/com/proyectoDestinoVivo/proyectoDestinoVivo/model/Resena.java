@@ -28,7 +28,8 @@ public class Resena {
         this.calificacion = calificacion;
     }
 
-    public Resena() {
+    public Resena(){
+
     }
 
     public int getId_resena() {

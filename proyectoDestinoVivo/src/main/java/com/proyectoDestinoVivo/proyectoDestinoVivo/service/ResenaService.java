@@ -6,10 +6,9 @@ import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Usuario;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.repository.EmpresaRepository;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.repository.ResenaRepository;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.repository.UsuarioRepository;
-import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import java.sql.SQLOutput;
+
 import java.util.List;
 
 @Service
@@ -25,7 +24,7 @@ public class ResenaService {
     }
 
     public Resena insertarResena(Resena resena){
-        System.out.println(resena);
+
         Usuario usuario = usuarioRepository.findById(resena.getUsuario().getDocumento())
                 .orElseThrow(()->new IllegalArgumentException("Usuario no encontrado"));
 
