@@ -1,11 +1,10 @@
 package com.proyectoDestinoVivo.proyectoDestinoVivo.controller;
 
+import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Red_Social;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Resena;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.service.ResenaService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,5 +30,15 @@ public class ResenaController {
         }catch (RuntimeException e){
            throw  new RuntimeException("Error al consultar las reseñas" +e);
         }
+    }
+    @PutMapping("/resenas/editar/{id_resena}")
+    public ResponseEntity<Resena> editarResena(@PathVariable int id_resena, @RequestBody Resena resena){
+        Resena actualizada = resenaService.editarResena(id_resena ,resena);
+        return ResponseEntity.ok(actualizada);
+    }
+
+    @DeleteMapping("/resenas/eliminar/{id_resena}")
+    public String eliminarResena(@PathVariable int id_resena,@RequestBody Resena resena){
+        return resenaService.eliminarResena(id_resena);
     }
 }

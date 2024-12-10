@@ -1,5 +1,6 @@
 package com.proyectoDestinoVivo.proyectoDestinoVivo.service;
 
+import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Empresa;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Usuario;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.repository.UsuarioRepository;
 import org.springframework.dao.DataAccessException;
@@ -30,6 +31,22 @@ public class UsuarioService {
     public List<Usuario> consultarUsuario(){
 
         return usuarioRepository.findAll();
+    }
+
+    public Usuario editarUsuario(String documento, Usuario usuario){
+        Usuario existente = usuarioRepository.findById(documento).orElseThrow(()->new RuntimeException("Usuario no existente"));
+        existente.setNombre(usuario.getNombre());
+        existente.setCorreo(usuario.getCorreo());
+        existente.setTelefono(usuario.getTelefono());
+        existente.setNacionalidad(usuario.getNacionalidad());
+        existente.setFecha_nacimiento(usuario.getFecha_nacimiento());
+        return usuarioRepository.save(existente);
+    }
+
+    public String eliminarUsuario(String documento){
+        Usuario existente = usuarioRepository.findById(documento).orElseThrow(()->new RuntimeException("Usuario no existente"));
+        usuarioRepository.deleteById(existente.getDocumento());
+        return "Usuario eliminada correctamente";
     }
 }
 

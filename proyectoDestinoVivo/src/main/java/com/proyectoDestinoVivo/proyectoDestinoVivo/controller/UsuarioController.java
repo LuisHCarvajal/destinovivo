@@ -35,4 +35,16 @@ public class UsuarioController {
         }
     }
 
+    @PutMapping("/usuarios/editar/{documento}")
+    public ResponseEntity<Usuario> editarUsuario(@PathVariable String documento, @RequestBody Usuario usuario){
+        Usuario actualizado = usuarioService.editarUsuario(documento, usuario);
+        return ResponseEntity.ok(actualizado);
+
+    }
+
+    @DeleteMapping("/usuarios/eliminar/{documento}")
+    public String eliminarUsuario(@PathVariable String documento, @RequestBody Usuario usuario){
+        return usuarioService.eliminarUsuario(documento);
+    }
+
 }

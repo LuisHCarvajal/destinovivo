@@ -1,6 +1,7 @@
 package com.proyectoDestinoVivo.proyectoDestinoVivo.service;
 
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Empresa;
+import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Red_Social;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Resena;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.model.Usuario;
 import com.proyectoDestinoVivo.proyectoDestinoVivo.repository.EmpresaRepository;
@@ -39,5 +40,20 @@ public class ResenaService {
 
     public List<Resena> consultarResena(){
         return  resenaRepository.findAll();
+    }
+
+    public Resena editarResena(int id_resena, Resena resena){
+        Resena existente = resenaRepository.findById(id_resena).orElseThrow(()->new RuntimeException("Reseña no existente"));
+        existente.setEmpresa(resena.getEmpresa());
+        existente.setUsuario(resena.getUsuario());
+        existente.setResena(resena.getResena());
+        existente.setCalificacion(resena.getCalificacion());
+        return resenaRepository.save(existente);
+    }
+
+    public String eliminarResena(int id_resena){
+        Resena existente = resenaRepository.findById(id_resena).orElseThrow(()->new RuntimeException("Reseña no existente"));
+        resenaRepository.deleteById(existente.getId_resena());
+        return "Reseña eliminada correctamente";
     }
 }
