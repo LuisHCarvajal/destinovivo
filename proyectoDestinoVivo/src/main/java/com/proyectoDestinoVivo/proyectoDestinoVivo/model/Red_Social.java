@@ -58,4 +58,7 @@ public class Red_Social {
     public void setEnlace(String enlace) {
         this.enlace = enlace;
     }
+
+    public int getId_red_social() { return id_redes;
+    }
 }
