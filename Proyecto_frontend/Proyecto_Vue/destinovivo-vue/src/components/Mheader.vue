@@ -4,7 +4,7 @@
 
         <h1>DESTINOVIVO</h1>
         <br></br>
-            <img src="../../public/images/logo1.png" alt="destinovivo">
+            <img src="../../images/logo1.png" alt="destinovivo">
         </div>
         <Mnavbar>
 

@@ -13,6 +13,12 @@
         <li>
             <router-link to ="/Insertar_Resena">Reseña</router-link>
         </li>
+        <li>
+            <router-link to ="/Insertar_RedesSociales">RedesSociales</router-link>
+        </li>
+        <li>
+            <router-link to ="/Insertar_Servicio">Servicio</router-link>
+        </li>
 
     </ul>
 </nav>
